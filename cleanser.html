@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDRN Cleanser — Yumi Skin Korea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FDFBFA;
+    --ink:#161214;
+    --ink-soft:#6E5C60;
+    --coral:#EF4E64;
+    --coral-deep:#C82C4E;
+    --pink-soft:#FCE9EC;
+    --pink-mid:#F6CDD5;
+    --line:#F0DEE1;
+    --dark:#180A0E;
+    --dark-glow:#3D0F1A;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);color:var(--ink);
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);font-weight:300;line-height:1.1;letter-spacing:0;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;display:block;}
+  button{font-family:inherit;}
+  .icon-btn{background:none;border:none;padding:6px;cursor:pointer;display:flex;color:var(--ink);}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:660px;margin:0 auto;}
+  .jost{font-family:'Jost',sans-serif;}
+
+  .eyebrow{display:flex;align-items:center;gap:10px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
+  .eyebrow .num{color:var(--ink-soft);}
+  .eyebrow .dash{width:22px;height:1px;background:var(--coral);display:inline-block;}
+  .eyebrow.center{justify-content:center;}
+
+  .mockup-banner{background:var(--dark);color:#F6D3DA;font-size:11px;line-height:1.5;padding:9px 18px;text-align:center;font-family:'Manrope',sans-serif;}
+  .mockup-banner b{color:#fff;}
+
+  .announce{background:linear-gradient(90deg,var(--coral),var(--coral-deep));color:#fff;text-align:center;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;}
+
+  .header-bar{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;background:rgba(253,251,250,.9);backdrop-filter:blur(8px);}
+  header.site{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .logo-lockup{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1;text-align:left;}
+  .logo-lockup .sub{display:block;font-family:'Jost',sans-serif;font-size:8px;letter-spacing:.35em;color:var(--coral);margin-top:2px;}
+  header.site nav.desktop-links{display:none;gap:30px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
+  header.site nav.desktop-links a:hover{color:var(--coral);}
+  .pill-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;border:none;border-radius:999px;padding:13px 26px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+  .pill-btn.ghost{background:none;border:1.5px solid var(--ink);color:var(--ink);}
+  .header-side{display:flex;align-items:center;gap:6px;}
+
+  .breadcrumb{padding:14px 24px 0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#B39AA0;max-width:1180px;margin:0 auto;}
+  .breadcrumb .current{color:var(--ink-soft);}
+
+  .ph{border:1.5px dashed #E0BFC6;border-radius:16px;background:linear-gradient(135deg,var(--pink-soft),var(--pink-mid));display:flex;flex-direction:column;align-items:center;justify-content:center;color:#B08890;text-align:center;padding:14px;gap:4px;}
+  .ph .ico{font-size:20px;opacity:.6;}
+  .ph .label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+
+  .product-hero{max-width:1180px;margin:0 auto;padding:20px 24px 0;}
+  .gallery{position:relative;}
+  .gallery-orb{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:1/1;background:radial-gradient(circle at 50% 45%,var(--pink-soft) 0%,var(--pink-mid) 55%,#F0B9C6 100%);display:flex;align-items:center;justify-content:center;}
+  .gallery-orb::before{content:"";position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(255,255,255,.5);}
+  .gallery-orb .badge-new{position:absolute;top:16px;left:16px;background:var(--dark);color:#fff;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:20px;padding:5px 12px;z-index:2;}
+  .gallery-dots{display:flex;justify-content:center;gap:5px;margin:14px 0;}
+  .gallery-dots span{width:5px;height:5px;border-radius:50%;background:var(--line);}
+  .gallery-dots span.active{background:var(--coral);width:16px;border-radius:4px;}
+  .thumb-strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;}
+  .thumb-strip .t{width:56px;height:56px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,var(--pink-soft),var(--pink-mid));border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px;opacity:.7;}
+  .thumb-strip .t.active{border-color:var(--coral);opacity:1;}
+  .gallery-caption{font-family:'Jost',sans-serif;font-size:9.5px;color:#B08890;text-align:center;padding:6px 0 0;letter-spacing:.02em;}
+
+  .buybox{padding:6px 0 6px;}
+  .cat-tag{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;display:block;}
+  h1.ptitle{font-size:38px;font-weight:400;margin:0 0 4px;}
+  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink-soft);margin:0 0 14px;}
+  .pdesc{font-size:14.5px;color:var(--ink-soft);margin:0 0 20px;}
+
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-bottom:22px;}
+  .check-item{display:flex;gap:8px;font-size:13px;color:var(--ink);align-items:flex-start;}
+  .check-item .ck{color:var(--coral);flex-shrink:0;font-size:13px;margin-top:2px;}
+
+  .variant-label{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;display:flex;justify-content:space-between;}
+  .variant-label .sel{color:var(--coral);}
+  .qty-tiers{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+  .qty-tier{border:1.5px solid var(--line);border-radius:16px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;}
+  .qty-tier.selected{border-color:var(--coral);background:var(--pink-soft);}
+  .qty-tier .pop{position:absolute;top:-9px;left:16px;background:var(--coral);color:#fff;font-family:'Jost',sans-serif;font-size:9px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;border-radius:20px;padding:2px 9px;}
+  .qty-tier .left{display:flex;align-items:center;gap:10px;}
+  .radio{width:17px;height:17px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;}
+  .qty-tier.selected .radio{border-color:var(--coral);background:radial-gradient(var(--coral) 0 40%, transparent 41%);}
+  .qty-tier .name{font-size:13.5px;font-weight:600;color:var(--ink);}
+  .qty-tier .sub{font-size:11px;color:var(--ink-soft);font-family:'Jost',sans-serif;}
+  .qty-tier .price{text-align:right;}
+  .qty-tier .price .now{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--ink);}
+  .qty-tier .price .was{font-size:11px;color:#B39AA0;text-decoration:line-through;}
+
+  .addcart{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;border:none;border-radius:999px;padding:17px 20px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;margin-bottom:10px;}
+  .buynow{display:flex;align-items:center;justify-content:center;width:100%;background:#fff;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:15px 20px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-bottom:16px;}
+  .trust-icons{display:flex;justify-content:space-between;gap:6px;}
+  .trust-icons .t{flex:1;text-align:center;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.02em;color:var(--ink-soft);}
+  .trust-icons .t .e{font-size:16px;display:block;margin-bottom:4px;}
+
+  .usage-box{border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;margin:24px 0 10px;}
+  .usage-box .lbl{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+  .usage-box p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+
+  .infoacc{max-width:660px;margin:0 auto;padding:0 24px 4px;}
+  .acc-item{border-bottom:1px solid var(--line);}
+  .acc-item summary{padding:16px 2px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  .acc-item summary::-webkit-details-marker{display:none;}
+  .acc-item summary::after{content:"+";font-size:19px;color:var(--coral);font-weight:300;font-family:'Cormorant Garamond',serif;}
+  .acc-item[open] summary::after{content:"–";}
+  .acc-item .body{font-size:13px;color:var(--ink-soft);margin:0 0 16px;padding-right:8px;}
+  .acc-item .body p{margin:0 0 8px;}
+  .acc-item .body .ftnote{color:var(--coral);font-weight:600;font-size:11px;}
+  .ing-mini{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);}
+  .ing-mini:last-child{border-bottom:none;}
+  .ing-mini b{display:block;color:var(--ink);font-size:12.5px;font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.02em;}
+  .ing-mini span{font-size:12px;color:var(--ink-soft);}
+
+  section{padding:60px 24px;border-top:1px solid var(--line);}
+  .section-head{text-align:center;margin:0 auto 22px;max-width:660px;}
+  .section-head h2{font-size:32px;margin:0 0 8px;font-weight:400;}
+  .section-head p{color:var(--ink-soft);margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;}
+
+  section.dark{background:radial-gradient(circle at 75% 20%,var(--dark-glow),var(--dark) 60%);border-top:none;}
+  .agita{max-width:660px;margin:0 auto;color:#F2D9DE;}
+  .agita .eyebrow{color:var(--coral);justify-content:center;}
+  .agita .eyebrow .dash{background:var(--coral);}
+  .agita h3{color:#fff;font-size:34px;text-align:center;margin:0 0 26px;font-weight:300;}
+  .agita .punch{font-family:'Cormorant Garamond',serif;font-style:italic;color:#F6D3DA;margin-top:22px;font-size:19px;text-align:center;line-height:1.4;}
+
+  .tline{max-width:660px;margin:0 auto;position:relative;padding-left:26px;}
+  .tline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .tstep{position:relative;padding-bottom:24px;}
+  .tstep:last-child{padding-bottom:0;}
+  .tstep::before{content:"";position:absolute;left:-26px;top:3px;width:11px;height:11px;border-radius:50%;background:var(--coral);border:2px solid var(--cream);box-shadow:0 0 0 1.5px var(--coral);}
+  .tstep .when{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);}
+  .tstep h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin:4px 0 6px;color:var(--ink);}
+  .tstep p{font-size:13px;color:var(--ink-soft);margin:0;}
+
+  .faq-item{max-width:660px;margin-left:auto;margin-right:auto;border-bottom:1px solid var(--line);}
+  .faq-item summary{padding:16px 2px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-size:22px;color:var(--coral);font-weight:300;flex-shrink:0;}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{font-size:13.5px;color:var(--ink-soft);margin:0 0 16px;padding-right:8px;}
+
+  .testi-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px;}
+  .testi-card{background:var(--pink-soft);border-radius:20px;padding:26px 24px;}
+  .testi-card p{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ink);margin:0 0 14px;line-height:1.35;}
+  .testi-card .who{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--coral-deep);}
+
+  .trust-triad{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;text-align:center;}
+  .trust-triad .it b{display:block;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+  .trust-triad .it p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  .xsell-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+  .xcard{border:1px solid var(--line);border-radius:20px;overflow:hidden;text-align:center;}
+  .xcard .ph{border-radius:0;aspect-ratio:1/1;border:none;border-bottom:1px solid var(--line);}
+  .xcard .info{padding:16px 14px;}
+  .xcard .klabel{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);}
+  .xcard h5{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;margin:4px 0 6px;color:var(--ink);}
+  .xcard .desc{font-size:11.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .xcard .price{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink);}
+
+  footer{border-top:1px solid var(--line);padding:44px 24px 100px;font-size:11.5px;color:#B39AA0;line-height:1.7;}
+  footer .finner{max-width:1180px;margin:0 auto;}
+  footer .fcols{display:flex;gap:70px;margin-bottom:28px;}
+  footer .fcol b{display:block;font-family:'Jost',sans-serif;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
+  footer .fcol div{margin-bottom:8px;}
+  footer .brand{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:19px;margin-bottom:12px;font-weight:400;}
+  footer .compliance{max-width:660px;border-top:1px solid var(--line);padding-top:16px;}
+
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;width:100%;background:rgba(253,251,250,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.05);z-index:30;}
+  .sticky-cta .inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:10px;}
+  .sticky-cta .thumb{width:42px;height:42px;border-radius:12px;background:radial-gradient(circle at 40% 30%,var(--pink-soft),var(--pink-mid));flex-shrink:0;}
+  .sticky-cta .info{flex:1;}
+  .sticky-cta .info .n{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:500;color:var(--ink);}
+  .sticky-cta .info .p{font-size:11.5px;color:var(--ink-soft);}
+  .sticky-cta .pill-btn{padding:12px 22px;}
+
+  @media (min-width:860px){
+    header.site nav.desktop-links{display:flex;}
+    .product-hero{display:grid;grid-template-columns:1fr .95fr;gap:64px;align-items:start;padding-top:36px;}
+    .gallery{position:sticky;top:100px;}
+    h1.ptitle{font-size:46px;}
+    .infoacc{margin-top:28px;}
+    section{padding:88px 24px;}
+    .section-head h2{font-size:42px;}
+    .xsell-grid{grid-template-columns:repeat(3,1fr);}
+    .testi-grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="mockup-banner">
+  🛠️ <b>Mockup local de trabalho</b> — mesmo sistema visual das outras páginas da linha. Composição usa a lista em português do rótulo (a única que lista PDRN — a versão em inglês do rótulo está incompleta, conferir com quem imprimiu). Preço e fotografia seguem placeholder.
+</div>
+
+<div class="announce">Lançamento Yumi Skin — primeiras unidades disponíveis</div>
+
+<div class="header-bar">
+  <header class="site">
+    <div class="header-side">
+      <button class="icon-btn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="logo-lockup">yumi<span class="sub">SKIN · KOREA</span></div>
+    <nav class="desktop-links">
+      <a href="#">Início</a>
+      <a href="#">Produtos</a>
+      <a href="#">Benefícios</a>
+      <a href="#">Rotina</a>
+      <a href="#">Resultados</a>
+      <a href="#">Sobre a Yumi</a>
+    </nav>
+    <div class="header-side">
+      <button class="pill-btn">Conheça a linha</button>
+    </div>
+  </header>
+</div>
+
+<div class="breadcrumb"><a href="#">Início</a> / <a href="#">Produtos</a> / <span class="current">PDRN Cleanser</span></div>
+
+<div class="product-hero">
+
+  <!-- GALLERY -->
+  <div class="gallery">
+    <div class="gallery-orb">
+      <span class="badge-new">Novo · Lançamento</span>
+      <svg width="130" viewBox="0 0 120 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="42" y="14" width="36" height="12" rx="3" fill="#180A0E"/>
+        <path d="M32 26 h56 a10 10 0 0 1 10 10 v128 a12 12 0 0 1 -12 12 H34 a12 12 0 0 1 -12 -12 V36 a10 10 0 0 1 10 -10 Z" fill="#FFFFFF" stroke="#EF4E64" stroke-width="1.5"/>
+        <text x="60" y="96" font-family="Cormorant Garamond, serif" font-size="12" fill="#161214" text-anchor="middle">yumi</text>
+        <text x="60" y="112" font-family="Manrope" font-size="7.5" font-weight="700" fill="#EF4E64" text-anchor="middle" letter-spacing="1">PDRN</text>
+        <text x="60" y="122" font-family="Manrope" font-size="6" fill="#6E5C60" text-anchor="middle" letter-spacing="1">CLEANSER</text>
+        <line x1="42" y1="132" x2="78" y2="132" stroke="#F0DEE1" stroke-width="1"/>
+        <text x="60" y="144" font-family="Manrope" font-size="5.5" fill="#B39AA0" text-anchor="middle" letter-spacing=".5">CONTEÚDO 120ML</text>
+      </svg>
+    </div>
+    <div class="gallery-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+    <div class="thumb-strip">
+      <div class="t active">🧴</div><div class="t">✋</div><div class="t">💧</div><div class="t">🔬</div><div class="t">📦</div>
+    </div>
+    <p class="gallery-caption">📷 Placeholder — substituir por still real do produto no orb rosa, espuma na mão, selo Anvisa</p>
+  </div>
+
+  <!-- BUY BOX -->
+  <div class="buybox">
+    <span class="cat-tag">Sabonete Facial · Cleanse · 120 ml</span>
+    <h1 class="ptitle">PDRN Cleanser</h1>
+    <p class="tagline">Uma limpeza suave, regeneradora e iluminadora.</p>
+    <p class="pdesc">Formulado com PDRN, pérola hidrolisada e um complexo mineral revitalizante. Remove impurezas e resíduos sem agredir a pele, deixando uma sensação de frescor, suavidade e luminosidade a cada uso.</p>
+
+    <div class="check-grid">
+      <div class="check-item"><span class="ck">✓</span>Limpeza suave e iluminadora</div>
+      <div class="check-item"><span class="ck">✓</span>Remove impurezas e resíduos</div>
+      <div class="check-item"><span class="ck">✓</span>Promove revitalização da pele</div>
+      <div class="check-item"><span class="ck">✓</span>Registrado como cosmético pela Anvisa</div>
+    </div>
+
+    <div class="variant-label"><span>Escolha seu kit</span><span class="sel">2 unidades selecionadas</span></div>
+    <div class="qty-tiers">
+      <div class="qty-tier">
+        <div class="left"><div class="radio"></div><div><div class="name">1 unidade</div><div class="sub">120 ml · ~60 dias de uso</div></div></div>
+        <div class="price"><div class="now">R$ --,--</div></div>
+      </div>
+      <div class="qty-tier selected">
+        <span class="pop">Mais escolhido</span>
+        <div class="left"><div class="radio"></div><div><div class="name">2 unidades</div><div class="sub">~120 dias · economize 10%</div></div></div>
+        <div class="price"><div class="now">R$ --,--</div></div>
+      </div>
+      <div class="qty-tier">
+        <div class="left"><div class="radio"></div><div><div class="name">3 unidades</div><div class="sub">~180 dias · economize 15%</div></div></div>
+        <div class="price"><div class="now">R$ --,--</div></div>
+      </div>
+    </div>
+
+    <button class="addcart">Quero este produto</button>
+    <button class="buynow">Comprar agora</button>
+
+    <div class="trust-icons">
+      <div class="t"><span class="e">🔒</span>Pagamento<br>seguro</div>
+      <div class="t"><span class="e">↩️</span>Garantia<br>30 dias</div>
+      <div class="t"><span class="e">🇧🇷</span>Regularizado<br>Anvisa</div>
+      <div class="t"><span class="e">📦</span>Envio p/<br>todo Brasil</div>
+    </div>
+  </div>
+
+</div><!-- /product-hero -->
+
+<!-- USAGE + ACCORDION -->
+<div class="infoacc">
+  <div class="usage-box">
+    <div class="lbl">Modo de usar</div>
+    <p>Aplique o sabonete diretamente nas mãos ou em uma esponja, criando espuma. Massageie suavemente sobre a pele com movimentos circulares. Deixe o produto agir por alguns segundos para que os ativos tenham tempo de agir. Enxágue com água morna, removendo todo o produto da pele.</p>
+  </div>
+
+  <details class="acc-item" open>
+    <summary>Composição completa</summary>
+    <div class="body">
+      <div class="ing-mini"><div><b>PDRN — Ácido Desoxirribonucleico Sódico</b><span>O mesmo princípio ativo da linha, presente também no primeiro passo da rotina</span></div></div>
+      <div class="ing-mini"><div><b>Pérola Hidrolisada</b><span>Ingrediente tradicional da beleza asiática, associado à luminosidade e suavidade da pele</span></div></div>
+      <div class="ing-mini"><div><b>Complexo Mineral (Cobre, Magnésio, Manganês e Zinco)</b><span>Minerais que apoiam a revitalização da pele durante a limpeza</span></div></div>
+      <p style="font-size:11px;color:#B39AA0;margin-top:10px;">Composição (lista em português do rótulo): água, sulfato de sódio laureto, dietanolamina cocamida, cocamidopropil betaína, distearato de etilenoglicol, fenoxietanol, decil glicosídeo, glicerina, propileno glicol, distearato de peg-150, pérola hidrolisada, silanetriol, benzoato de sódio, perfume, acetilmetionato de cobre, acetilmetionato de magnésio, acetilmetionato de manganês, acetilmetionato de zinco, adipato de dibutila, pentaeritritil tetra-di-t-butil hidroxi-hidrocinamato, óleo de rícino hidrogenado peg-40, cloreto de sódio, ácido cítrico, edetato dissódico, 1,2-hexanediol, álcool decílico, ácido desoxirribonucleico sódico, mica/corante branco 77891, dióxido de titânio/corante branco 77891. Fabricado por Veneza Indústria e Comércio de Cosméticos Ltda. — Cambé/PR. Fórmula regularizada junto à Anvisa.</p>
+    </div>
+  </details>
+
+  <details class="acc-item">
+    <summary>Precauções e advertências</summary>
+    <div class="body">
+      <p>Uso externo. Em caso de contato com os olhos, enxágue abundantemente com água. Em caso de irritação, suspender o uso e procurar orientação médica. Manter em local fresco, ao abrigo da luz.</p>
+    </div>
+  </details>
+
+  <details class="acc-item">
+    <summary>Como funciona</summary>
+    <div class="body">
+      <p>O papel do cleanser é preparar a pele: remover impurezas e resíduos sem agredir a barreira cutânea, abrindo caminho pro resto da rotina. A pérola hidrolisada e o complexo mineral atuam na sensação imediata de frescor e luminosidade.</p>
+      <p>Por ser um produto de enxágue, o tempo de contato com a pele é curto — a ação mais profunda do PDRN na rotina acontece no PDRN Serum, que permanece na pele. Aqui, o PDRN reforça a consistência do princípio ativo ao longo dos três passos.</p>
+    </div>
+  </details>
+
+  <details class="acc-item">
+    <summary>Envio e trocas</summary>
+    <div class="body"><p>Envio para todo o Brasil. Garantia de 30 dias — se não notar diferença real, devolvemos 100%, sem formulário, sem justificativa.</p></div>
+  </details>
+</div>
+
+<!-- RITUAL -->
+<section class="dark">
+  <div class="agita">
+    <div class="eyebrow"><span class="dash"></span>O primeiro passo</div>
+    <h3>Limpar sem<br>agredir.</h3>
+    <p style="text-align:center;font-size:14px;color:#E9C7CE;margin:0 0 8px;">Pérola hidrolisada e um complexo mineral trabalham na sensação de frescor e luminosidade, enquanto o PDRN mantém o mesmo princípio ativo presente nos três passos da rotina.</p>
+    <p class="punch">Uma pele bem preparada rende mais nos passos seguintes — Treat e Glow.</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Resultados</div>
+    <h2>Da primeira lavagem<br>ao uso contínuo.</h2>
+  </div>
+  <div class="tline">
+    <div class="tstep">
+      <div class="when">Primeira lavagem</div>
+      <h4>Sensação imediata de frescor</h4>
+      <p>Pele limpa sem aquela sensação de repuxamento — o objetivo é remover sem ressecar.</p>
+    </div>
+    <div class="tstep">
+      <div class="when">Semana 1</div>
+      <h4>Textura mais uniforme</h4>
+      <p>Com o uso constante, manhã e noite, a pele começa a responder de forma mais equilibrada, preparada pros próximos passos.</p>
+    </div>
+    <div class="tstep">
+      <div class="when">Uso contínuo</div>
+      <h4>Parte de uma rotina, não um produto isolado</h4>
+      <p>O cleanser prepara a pele pra absorver melhor o sérum e o stick — o ritual completo rende mais que cada peça sozinha.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Antes de decidir</div>
+    <h2>As perguntas que você<br>provavelmente já se fez.</h2>
+  </div>
+  <details class="faq-item">
+    <summary>Preciso de um demaquilante antes de usar o sabonete?</summary>
+    <p>Pra maquiagem leve ou protetor solar, o cleanser sozinho já limpa bem. Pra maquiagem mais pesada ou à prova d'água, recomendamos uma primeira remoção antes, pra não sobrecarregar a limpeza.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Posso usar de manhã e à noite?</summary>
+    <p>Sim — é o uso recomendado. De manhã remove o excesso de oleosidade da noite, à noite remove impurezas do dia e prepara a pele pro sérum.</p>
+  </details>
+  <details class="faq-item">
+    <summary>É indicado para peles sensíveis?</summary>
+    <p>A fórmula foi pensada pra limpar sem agredir a barreira cutânea. Ainda assim, recomendamos um teste de toque antes da primeira aplicação completa, como com qualquer produto novo na rotina.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Qual a diferença entre lavar com esse sabonete e um sabonete comum?</summary>
+    <p>A base de limpeza é suave (sem sulfatos agressivos), e carrega o mesmo PDRN presente nos outros dois passos da linha — a ideia é que a rotina inteira "fale a mesma língua", não só o sérum.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Isso substitui minha rotina inteira?</summary>
+    <p>Não — e não deveria. O cleanser é o passo Cleanse. Rende mais dentro do ritual completo: Cleanse com o Cleanser, Treat com o Serum, Glow com o Moisture Stick — três passos, não uma rotina de dez.</p>
+  </details>
+</section>
+
+<!-- DEPOIMENTOS — EXEMPLO, substituir por depoimentos reais assim que coletados -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Quem já usa</div>
+    <h2>O que estão dizendo.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <p>"Minha pele sempre ficou repuxada depois de lavar o rosto. Com esse cleanser, lavo e a pele continua macia, sem esticar."</p>
+      <div class="who">Renata, 49 anos</div>
+    </div>
+    <div class="testi-card">
+      <p>"Uso há 1 mês, manhã e noite. Minha pele ficou visivelmente mais uniforme, e o sérum absorve muito melhor depois."</p>
+      <div class="who">Patrícia, 55 anos</div>
+    </div>
+    <div class="testi-card">
+      <p>"Já testei vários sabonetes faciais que ressecavam demais. Esse limpa de verdade sem deixar a pele apertada."</p>
+      <div class="who">Luciana, 47 anos</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST TRIAD -->
+<section>
+  <div class="trust-triad">
+    <div class="it"><b>Fórmula registrada</b><p>O PDRN Cleanser é um cosmético regularizado junto à Anvisa.</p></div>
+    <div class="it"><b>Composição aberta</b><p>A lista completa de ingredientes fica visível na ficha, sem letra miúda.</p></div>
+    <div class="it"><b>Sem promessa exagerada</b><p>Comunicamos apenas o que a fórmula sustenta — nada de resultado garantido.</p></div>
+  </div>
+</section>
+
+<!-- CROSS-SELL -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Kits</div>
+    <h2>Complete seu ritual.</h2>
+    <p>Combinações pensadas para quem está começando e para quem quer a rotina inteira.</p>
+  </div>
+  <div class="xsell-grid">
+    <div class="xcard">
+      <div class="ph"><span class="ico">🧴💧</span></div>
+      <div class="info">
+        <div class="klabel">Kit 01</div>
+        <h5>Duo Essencial</h5>
+        <div class="desc">A base da rotina: limpar e tratar. Cleanser + Serum.</div>
+        <div class="price">R$ --,--</div>
+      </div>
+    </div>
+    <div class="xcard">
+      <div class="ph"><span class="ico">💧🖊️</span></div>
+      <div class="info">
+        <div class="klabel">Kit 02</div>
+        <h5>Duo Glow</h5>
+        <div class="desc">Tratamento e luminosidade. Serum + Moisture Stick.</div>
+        <div class="price">R$ --,--</div>
+      </div>
+    </div>
+    <div class="xcard">
+      <div class="ph"><span class="ico">🧴💧🖊️</span></div>
+      <div class="info">
+        <div class="klabel">Kit 03</div>
+        <h5>Ritual Completo Yumi</h5>
+        <div class="desc">Os três passos, do primeiro gesto ao brilho final.</div>
+        <div class="price">R$ --,--</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="finner">
+    <div class="fcols">
+      <div class="fcol">
+        <b>Yumi</b>
+        <div>Sobre</div>
+        <div>Nossa linha</div>
+        <div>Contato</div>
+      </div>
+      <div class="fcol">
+        <b>Produtos</b>
+        <div>PDRN Cleanser</div>
+        <div>PDRN Serum</div>
+        <div>PDRN Moisture Stick</div>
+      </div>
+      <div class="fcol">
+        <b>Ajuda</b>
+        <div>FAQ</div>
+        <div>Política de privacidade</div>
+        <div>Termos</div>
+      </div>
+    </div>
+    <div class="brand">yumi skin</div>
+    <div class="compliance">
+      Imagens de produto ilustrativas. Cosméticos não substituem orientação médica.<br><br>
+      PDRN Cleanser é um cosmético registrado na Anvisa. Não se destina a diagnosticar, tratar, curar ou prevenir doenças. Resultados individuais podem variar.<br><br>
+      © 2026 Yumi Skin Korea
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <div class="inner">
+    <div class="thumb"></div>
+    <div class="info">
+      <div class="n">PDRN Cleanser · 2un</div>
+      <div class="p">R$ --,--</div>
+    </div>
+    <button class="pill-btn">Quero este produto</button>
+  </div>
+</div>
+
+</body>
+</html>
