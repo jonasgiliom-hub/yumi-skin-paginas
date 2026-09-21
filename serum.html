@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDRN Serum — Yumi Skin Korea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FDFBFA;
+    --ink:#161214;
+    --ink-soft:#6E5C60;
+    --coral:#EF4E64;
+    --coral-deep:#C82C4E;
+    --pink-soft:#FCE9EC;
+    --pink-mid:#F6CDD5;
+    --line:#F0DEE1;
+    --dark:#180A0E;
+    --dark-glow:#3D0F1A;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);color:var(--ink);
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);font-weight:300;line-height:1.1;letter-spacing:0;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;display:block;}
+  button{font-family:inherit;}
+  .icon-btn{background:none;border:none;padding:6px;cursor:pointer;display:flex;color:var(--ink);}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:660px;margin:0 auto;}
+  .jost{font-family:'Jost',sans-serif;}
+
+  /* EYEBROW — numbered/dashed label, matches yumiskin.com.br section markers */
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;font-family:'Jost',sans-serif;
+    font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);
+    margin-bottom:14px;
+  }
+  .eyebrow .num{color:var(--ink-soft);}
+  .eyebrow .dash{width:22px;height:1px;background:var(--coral);display:inline-block;}
+  .eyebrow.center{justify-content:center;}
+
+  /* MOCKUP NOTICE */
+  .mockup-banner{background:var(--dark);color:#F6D3DA;font-size:11px;line-height:1.5;padding:9px 18px;text-align:center;font-family:'Manrope',sans-serif;}
+  .mockup-banner b{color:#fff;}
+
+  .announce{background:linear-gradient(90deg,var(--coral),var(--coral-deep));color:#fff;text-align:center;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;}
+
+  /* HEADER — matches yumiskin.com.br: logo lockup left, nav center, pill CTA right */
+  .header-bar{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;background:rgba(253,251,250,.9);backdrop-filter:blur(8px);}
+  header.site{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .logo-lockup{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1;text-align:left;}
+  .logo-lockup .sub{display:block;font-family:'Jost',sans-serif;font-size:8px;letter-spacing:.35em;color:var(--coral);margin-top:2px;}
+  header.site nav.desktop-links{display:none;gap:30px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
+  header.site nav.desktop-links a:hover{color:var(--coral);}
+  .pill-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;border:none;
+    border-radius:999px;padding:13px 26px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.12em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+  }
+  .pill-btn.ghost{background:none;border:1.5px solid var(--ink);color:var(--ink);}
+  .header-side{display:flex;align-items:center;gap:6px;}
+
+  .breadcrumb{padding:14px 24px 0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#B39AA0;max-width:1180px;margin:0 auto;}
+  .breadcrumb .current{color:var(--ink-soft);}
+
+  /* PLACEHOLDER MEDIA */
+  .ph{border:1.5px dashed #E0BFC6;border-radius:16px;background:linear-gradient(135deg,var(--pink-soft),var(--pink-mid));display:flex;flex-direction:column;align-items:center;justify-content:center;color:#B08890;text-align:center;padding:14px;gap:4px;}
+  .ph .ico{font-size:20px;opacity:.6;}
+  .ph .label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+
+  /* PRODUCT HERO */
+  .product-hero{max-width:1180px;margin:0 auto;padding:20px 24px 0;}
+  .gallery{position:relative;}
+  .gallery-orb{
+    position:relative;border-radius:32px;overflow:hidden;aspect-ratio:1/1;
+    background:radial-gradient(circle at 50% 45%,var(--pink-soft) 0%,var(--pink-mid) 55%,#F0B9C6 100%);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .gallery-orb::before{content:"";position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(255,255,255,.5);}
+  .gallery-orb .badge-new{position:absolute;top:16px;left:16px;background:var(--dark);color:#fff;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:20px;padding:5px 12px;z-index:2;}
+  .gallery-dots{display:flex;justify-content:center;gap:5px;margin:14px 0;}
+  .gallery-dots span{width:5px;height:5px;border-radius:50%;background:var(--line);}
+  .gallery-dots span.active{background:var(--coral);width:16px;border-radius:4px;}
+  .thumb-strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;}
+  .thumb-strip .t{width:56px;height:56px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,var(--pink-soft),var(--pink-mid));border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px;opacity:.7;}
+  .thumb-strip .t.active{border-color:var(--coral);opacity:1;}
+  .gallery-caption{font-family:'Jost',sans-serif;font-size:9.5px;color:#B08890;text-align:center;padding:6px 0 0;letter-spacing:.02em;}
+
+  /* BUY BOX */
+  .buybox{padding:6px 0 6px;}
+  .cat-tag{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;display:block;}
+  h1.ptitle{font-size:38px;font-weight:400;margin:0 0 4px;}
+  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink-soft);margin:0 0 14px;}
+  .rating-row{display:flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:11.5px;letter-spacing:.03em;color:var(--ink-soft);margin-bottom:16px;}
+  .stars{color:var(--line);font-size:14px;letter-spacing:1px;}
+  .pdesc{font-size:14.5px;color:var(--ink-soft);margin:0 0 20px;}
+
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-bottom:22px;}
+  .check-item{display:flex;gap:8px;font-size:13px;color:var(--ink);align-items:flex-start;}
+  .check-item .ck{color:var(--coral);flex-shrink:0;font-size:13px;margin-top:2px;}
+
+  .variant-label{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;display:flex;justify-content:space-between;}
+  .variant-label .sel{color:var(--coral);}
+  .qty-tiers{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+  .qty-tier{border:1.5px solid var(--line);border-radius:16px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;}
+  .qty-tier.selected{border-color:var(--coral);background:var(--pink-soft);}
+  .qty-tier .pop{position:absolute;top:-9px;left:16px;background:var(--coral);color:#fff;font-family:'Jost',sans-serif;font-size:9px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;border-radius:20px;padding:2px 9px;}
+  .qty-tier .left{display:flex;align-items:center;gap:10px;}
+  .radio{width:17px;height:17px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;}
+  .qty-tier.selected .radio{border-color:var(--coral);background:radial-gradient(var(--coral) 0 40%, transparent 41%);}
+  .qty-tier .name{font-size:13.5px;font-weight:600;color:var(--ink);}
+  .qty-tier .sub{font-size:11px;color:var(--ink-soft);font-family:'Jost',sans-serif;}
+  .qty-tier .price{text-align:right;}
+  .qty-tier .price .now{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--ink);}
+  .qty-tier .price .was{font-size:11px;color:#B39AA0;text-decoration:line-through;}
+
+  .addcart{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;border:none;border-radius:999px;padding:17px 20px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;margin-bottom:10px;}
+  .buynow{display:flex;align-items:center;justify-content:center;width:100%;background:#fff;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:15px 20px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-bottom:16px;}
+  .trust-icons{display:flex;justify-content:space-between;gap:6px;}
+  .trust-icons .t{flex:1;text-align:center;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.02em;color:var(--ink-soft);}
+  .trust-icons .t .e{font-size:16px;display:block;margin-bottom:4px;}
+
+  /* MODO DE USAR callout — matches official's bordered box before accordions */
+  .usage-box{border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;margin:24px 0 10px;}
+  .usage-box .lbl{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+  .usage-box p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+
+  /* ACCORDION — labels match official site verbatim */
+  .infoacc{max-width:660px;margin:0 auto;padding:0 24px 4px;}
+  .acc-item{border-bottom:1px solid var(--line);}
+  .acc-item summary{padding:16px 2px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  .acc-item summary::-webkit-details-marker{display:none;}
+  .acc-item summary::after{content:"+";font-size:19px;color:var(--coral);font-weight:300;font-family:'Cormorant Garamond',serif;}
+  .acc-item[open] summary::after{content:"–";}
+  .acc-item .body{font-size:13px;color:var(--ink-soft);margin:0 0 16px;padding-right:8px;}
+  .acc-item .body p{margin:0 0 8px;}
+  .acc-item .body .ftnote{color:var(--coral);font-weight:600;font-size:11px;}
+  .ing-mini{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);}
+  .ing-mini:last-child{border-bottom:none;}
+  .ing-mini b{display:block;color:var(--ink);font-size:12.5px;font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.02em;}
+  .ing-mini span{font-size:12px;color:var(--ink-soft);}
+  .flag-note{background:var(--pink-soft);border-radius:12px;padding:12px 14px;font-size:11.5px;color:var(--coral-deep);margin-top:12px;}
+
+  section{padding:60px 24px;border-top:1px solid var(--line);}
+  .section-head{text-align:center;margin:0 auto 22px;max-width:660px;}
+  .section-head h2{font-size:32px;margin:0 0 8px;font-weight:400;}
+  .section-head p{font-size:14px;color:var(--ink-soft);margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;}
+
+  /* AGITAÇÃO — dark section, matches official's "O Ritual" dark treatment */
+  section.dark{background:radial-gradient(circle at 75% 20%,var(--dark-glow),var(--dark) 60%);border-top:none;}
+  .agita{max-width:660px;margin:0 auto;color:#F2D9DE;}
+  .agita .eyebrow{color:var(--coral);justify-content:center;}
+  .agita .eyebrow .dash{background:var(--coral);}
+  .agita h3{color:#fff;font-size:34px;text-align:center;margin:0 0 26px;font-weight:300;}
+  .cost-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13.5px;}
+  .cost-row span:first-child{color:#D9AEB6;}
+  .cost-row b{color:#fff;font-weight:600;}
+  .cost-total{display:flex;justify-content:space-between;padding-top:16px;margin-top:6px;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--coral);}
+  .agita .punch{font-family:'Cormorant Garamond',serif;font-style:italic;color:#F6D3DA;margin-top:22px;font-size:19px;text-align:center;line-height:1.4;}
+
+  /* TIMELINE */
+  .tline{max-width:660px;margin:0 auto;position:relative;padding-left:26px;}
+  .tline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .tstep{position:relative;padding-bottom:24px;}
+  .tstep:last-child{padding-bottom:0;}
+  .tstep::before{content:"";position:absolute;left:-26px;top:3px;width:11px;height:11px;border-radius:50%;background:var(--coral);border:2px solid var(--cream);box-shadow:0 0 0 1.5px var(--coral);}
+  .tstep .when{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);}
+  .tstep h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin:4px 0 6px;color:var(--ink);}
+  .tstep p{font-size:13px;color:var(--ink-soft);margin:0;}
+
+  /* COMPARATIVO */
+  table.comp{max-width:660px;margin:0 auto;width:100%;border-collapse:collapse;font-size:12.5px;}
+  table.comp th{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:16px;padding:11px 6px;text-align:center;border-bottom:2px solid var(--ink);}
+  table.comp th.us{color:var(--coral);}
+  table.comp th.them{color:var(--ink-soft);}
+  table.comp td{padding:11px 6px;border-bottom:1px solid var(--line);text-align:center;vertical-align:top;}
+  table.comp td.label{text-align:left;color:var(--ink-soft);font-weight:500;font-family:'Jost',sans-serif;font-size:11.5px;letter-spacing:.02em;}
+  table.comp td.us{color:var(--ink);font-weight:700;}
+  .comp-flag{max-width:660px;margin:16px auto 0;background:var(--pink-soft);color:var(--coral-deep);font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;border-radius:14px;padding:12px 16px;text-align:center;}
+
+  /* FAQ */
+  .faq-item{max-width:660px;margin-left:auto;margin-right:auto;border-bottom:1px solid var(--line);}
+  .faq-item summary{padding:16px 2px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-size:22px;color:var(--coral);font-weight:300;flex-shrink:0;}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{font-size:13.5px;color:var(--ink-soft);margin:0 0 16px;padding-right:8px;}
+
+  /* DEPOIMENTOS */
+  .testi-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px;}
+  .testi-card{background:var(--pink-soft);border-radius:20px;padding:26px 24px;}
+  .testi-card p{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ink);margin:0 0 14px;line-height:1.35;}
+  .testi-card .who{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--coral-deep);}
+
+  /* TRUST TRIAD — reuses official's real copy verbatim */
+  .trust-triad{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;text-align:center;}
+  .trust-triad .it b{display:block;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+  .trust-triad .it p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  /* CROSS-SELL — real kit names from the official site */
+  .xsell-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+  .xcard{border:1px solid var(--line);border-radius:20px;overflow:hidden;text-align:center;}
+  .xcard .ph{border-radius:0;aspect-ratio:1/1;border:none;border-bottom:1px solid var(--line);}
+  .xcard .info{padding:16px 14px;}
+  .xcard .klabel{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);}
+  .xcard h5{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;margin:4px 0 6px;color:var(--ink);}
+  .xcard .desc{font-size:11.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .xcard .price{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink);}
+
+  /* NATIVE REVIEWS WIDGET */
+  .rev-summary{max-width:660px;margin:0 auto 18px;display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+  .rev-summary .stars-big{font-size:22px;color:var(--line);letter-spacing:2px;}
+  .rev-summary .txt{font-size:12.5px;color:var(--ink-soft);}
+  .rev-empty{max-width:660px;margin:0 auto;text-align:center;padding:24px 16px;background:var(--pink-soft);border-radius:18px;font-size:13px;color:var(--ink-soft);}
+  .rev-empty b{color:var(--ink);display:block;margin-bottom:6px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;}
+
+  footer{border-top:1px solid var(--line);padding:44px 24px 100px;font-size:11.5px;color:#B39AA0;line-height:1.7;}
+  footer .finner{max-width:1180px;margin:0 auto;}
+  footer .fcols{display:flex;gap:70px;margin-bottom:28px;}
+  footer .fcol b{display:block;font-family:'Jost',sans-serif;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
+  footer .fcol div{margin-bottom:8px;}
+  footer .brand{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:19px;margin-bottom:12px;font-weight:400;}
+  footer .compliance{max-width:660px;border-top:1px solid var(--line);padding-top:16px;}
+
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;width:100%;background:rgba(253,251,250,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.05);z-index:30;}
+  .sticky-cta .inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:10px;}
+  .sticky-cta .thumb{width:42px;height:42px;border-radius:12px;background:radial-gradient(circle at 40% 30%,var(--pink-soft),var(--pink-mid));flex-shrink:0;}
+  .sticky-cta .info{flex:1;}
+  .sticky-cta .info .n{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:500;color:var(--ink);}
+  .sticky-cta .info .p{font-size:11.5px;color:var(--ink-soft);}
+  .sticky-cta .pill-btn{padding:12px 22px;}
+
+  @media (min-width:860px){
+    header.site nav.desktop-links{display:flex;}
+    .product-hero{display:grid;grid-template-columns:1fr .95fr;gap:64px;align-items:start;padding-top:36px;}
+    .gallery{position:sticky;top:100px;}
+    h1.ptitle{font-size:46px;}
+    .infoacc{margin-top:28px;}
+    section{padding:88px 24px;}
+    .section-head h2{font-size:42px;}
+    .xsell-grid{grid-template-columns:repeat(3,1fr);}
+    .testi-grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="mockup-banner">
+  🛠️ <b>Mockup local de trabalho</b> — sistema visual de yumiskin.com.br (cores, tipografia Cormorant Garamond/Jost/Manrope, componentes). Copy foca no produto, sem comparação com procedimento/concorrência. Depoimentos são exemplos de estrutura pra desenvolvimento — substituir pelos reais assim que coletados. Preço e fotografia seguem placeholder.
+</div>
+
+<div class="announce">Lançamento Yumi Skin — primeiras unidades disponíveis</div>
+
+<div class="header-bar">
+  <header class="site">
+    <div class="header-side">
+      <button class="icon-btn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="logo-lockup">yumi<span class="sub">SKIN · KOREA</span></div>
+    <nav class="desktop-links">
+      <a href="#">Início</a>
+      <a href="#">Produtos</a>
+      <a href="#">Benefícios</a>
+      <a href="#">Rotina</a>
+      <a href="#">Resultados</a>
+      <a href="#">Sobre a Yumi</a>
+    </nav>
+    <div class="header-side">
+      <button class="pill-btn">Conheça a linha</button>
+    </div>
+  </header>
+</div>
+
+<div class="breadcrumb"><a href="#">Início</a> / <a href="#">Produtos</a> / <span class="current">PDRN Serum</span></div>
+
+<div class="product-hero">
+
+  <!-- GALLERY -->
+  <div class="gallery">
+    <div class="gallery-orb">
+      <span class="badge-new">Novo · Lançamento</span>
+      <svg width="140" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="38" y="18" width="44" height="14" rx="4" fill="#C82C4E"/>
+        <rect x="44" y="6" width="32" height="16" rx="3" fill="#180A0E"/>
+        <rect x="30" y="32" width="60" height="130" rx="18" fill="#FFFFFF" stroke="#EF4E64" stroke-width="1.5"/>
+        <text x="60" y="86" font-family="Cormorant Garamond, serif" font-size="12" fill="#161214" text-anchor="middle">yumi</text>
+        <text x="60" y="102" font-family="Manrope" font-size="7.5" font-weight="700" fill="#EF4E64" text-anchor="middle" letter-spacing="1">PDRN</text>
+        <text x="60" y="112" font-family="Manrope" font-size="6" fill="#6E5C60" text-anchor="middle" letter-spacing="1">SERUM</text>
+        <line x1="42" y1="122" x2="78" y2="122" stroke="#F0DEE1" stroke-width="1"/>
+        <text x="60" y="134" font-family="Manrope" font-size="5.5" fill="#B39AA0" text-anchor="middle" letter-spacing=".5">CONTEÚDO 30ML</text>
+      </svg>
+    </div>
+    <div class="gallery-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+    <div class="thumb-strip">
+      <div class="t active">🧴</div><div class="t">✋</div><div class="t">🔬</div><div class="t">📊</div><div class="t">📦</div>
+    </div>
+    <p class="gallery-caption">📷 Placeholder — substituir por still real do produto no orb rosa, textura na mão, selo Anvisa, gráfico de estudo</p>
+  </div>
+
+  <!-- BUY BOX -->
+  <div class="buybox">
+    <span class="cat-tag">Sérum Facial · Treat · 30 ml</span>
+    <h1 class="ptitle">PDRN Serum</h1>
+    <p class="tagline">Cuidado intensivo e hidratação profunda, gota a gota.</p>
+    <p class="pdesc">Formulado com PDRN e Acetyl Hexapeptide-8 para apoiar a produção natural de colágeno e suavizar a aparência de linhas de expressão — dois ativos, um princípio, aplicado todos os dias na sua rotina.</p>
+
+    <div class="check-grid">
+      <div class="check-item"><span class="ck">✓</span>Cuidado intensivo e hidratação profunda</div>
+      <div class="check-item"><span class="ck">✓</span>Ativos que trabalham sinergicamente</div>
+      <div class="check-item"><span class="ck">✓</span>Registrado como cosmético pela Anvisa</div>
+      <div class="check-item"><span class="ck">✓</span>Sem promessa que a fórmula não sustenta</div>
+    </div>
+
+    <div class="variant-label"><span>Escolha seu kit</span><span class="sel">2 unidades selecionadas</span></div>
+    <div class="qty-tiers">
+      <div class="qty-tier">
+        <div class="left"><div class="radio"></div><div><div class="name">1 unidade</div><div class="sub">30 dias de uso</div></div></div>
+        <div class="price"><div class="now">R$ --,--</div></div>
+      </div>
+      <div class="qty-tier selected">
+        <span class="pop">Mais escolhido</span>
+        <div class="left"><div class="radio"></div><div><div class="name">2 unidades</div><div class="sub">60 dias · economize 10%</div></div></div>
+        <div class="price"><div class="now">R$ --,--</div></div>
+      </div>
+      <div class="qty-tier">
+        <div class="left"><div class="radio"></div><div><div class="name">3 unidades</div><div class="sub">90 dias · economize 15%</div></div></div>
+        <div class="price"><div class="now">R$ --,--</div></div>
+      </div>
+    </div>
+
+    <button class="addcart">Quero este produto</button>
+    <button class="buynow">Comprar agora</button>
+
+    <div class="trust-icons">
+      <div class="t"><span class="e">🔒</span>Pagamento<br>seguro</div>
+      <div class="t"><span class="e">↩️</span>Garantia<br>30 dias</div>
+      <div class="t"><span class="e">🇧🇷</span>Regularizado<br>Anvisa</div>
+      <div class="t"><span class="e">📦</span>Envio p/<br>todo Brasil</div>
+    </div>
+  </div>
+
+</div><!-- /product-hero -->
+
+<!-- USAGE + ACCORDION (matches official structure/labels) -->
+<div class="infoacc">
+  <div class="usage-box">
+    <div class="lbl">Modo de usar</div>
+    <p>Aplique 2-3 gotas do sérum nas pontas dos dedos. Com a pele limpa, espalhe suavemente por todo o rosto, manhã e noite. Durante a aplicação, não encoste a cânula na pele para evitar contaminação do produto.</p>
+  </div>
+
+  <details class="acc-item" open>
+    <summary>Composição completa</summary>
+    <div class="body">
+      <div class="ing-mini"><div><b>PDRN — Sodium DNA</b><span>Ativa o receptor de adenosina A2A, estimulando fibroblastos e colágeno tipos I e III</span></div></div>
+      <div class="ing-mini"><div><b>Acetyl Hexapeptide-8</b><span>Peptídeo que ajuda a suavizar a aparência de linhas de expressão — mecanismo inspirado no mesmo princípio usado por toxina botulínica, sem agulha e sem toxina</span></div></div>
+      <div class="ing-mini"><div><b>Lactobacillus Ferment</b><span>Fermentado que fortalece a barreira cutânea e sustenta a hidratação da pele ao longo do dia</span></div></div>
+      <p style="font-size:11px;color:#B39AA0;margin-top:10px;">INCI completo: aqua, glycerin, propylene glycol, phenoxyethanol, caprylyl glycol, hydroxyethylcellulose, peg-40 hydrogenated castor oil, parfum, polysorbate 20, 1,2-hexanediol, edta, sodium dna, acetyl hexapeptide-8, lactobacillus ferment, ci 14720, benzyl salicylate, butylphenyl methylpropional. Fabricado por Veneza Indústria e Comércio de Cosméticos Ltda. — Cambé/PR. Fórmula regularizada junto à Anvisa.</p>
+    </div>
+  </details>
+
+  <details class="acc-item">
+    <summary>Precauções e advertências</summary>
+    <div class="body">
+      <p>Uso externo. Evitar contato com os olhos. Pode causar leve formigamento nos primeiros 30-60 segundos e sensação de calor por alguns minutos — sinal de microcirculação ativada, não reação adversa. Vermelhidão leve pode ocorrer em peles mais reativas. Recomendamos teste de toque antes da primeira aplicação completa. Suspender o uso e procurar orientação em caso de irritação persistente.</p>
+    </div>
+  </details>
+
+  <details class="acc-item">
+    <summary>Como funciona o PDRN</summary>
+    <div class="body">
+      <p>PDRN — Polidesoxirribonucleotídeo, DNA derivado de salmão — é a tecnologia por trás dos procedimentos de bioestimulação mais procurados hoje. A diferença não está no princípio. Está em como ele chega até a sua pele.</p>
+      <p>Ativa o receptor de adenosina A2A na pele, estimulando a atividade dos fibroblastos e a síntese de colágeno tipos I e III. <span class="ftnote">[1]</span></p>
+      <p>Um estudo publicado em 2025 testou PDRN formulado especificamente para penetração tópica, com reparo mensurável da matriz extracelular em pele fotodanificada. <span class="ftnote">[2]</span></p>
+      <p style="font-size:11px;color:#B39AA0;">[1] Pharmacological Activity and Clinical Use of PDRN — PMC · [2] Topical medium-length PDRN enhances dermal ECM repair, estudo publicado 2025.</p>
+    </div>
+  </details>
+
+  <details class="acc-item">
+    <summary>Envio e trocas</summary>
+    <div class="body"><p>Envio para todo o Brasil. Garantia de 30 dias — se não notar diferença real, devolvemos 100%, sem formulário, sem justificativa.</p></div>
+  </details>
+</div>
+
+<!-- RITUAL — dark section, destaca o produto e o princípio, sem comparação -->
+<section class="dark">
+  <div class="agita">
+    <div class="eyebrow"><span class="dash"></span>O princípio</div>
+    <h3>Estimular. Todos<br>os dias.</h3>
+    <p style="text-align:center;font-size:14px;color:#E9C7CE;margin:0 0 8px;">PDRN e Acetyl Hexapeptide-8 trabalham juntos pra apoiar o que a sua pele já sabe fazer: produzir colágeno e suavizar a aparência das linhas de expressão.</p>
+    <p class="punch">Não é uma sessão isolada. É um gesto simples, todos os dias — e é isso que sustenta o resultado.</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Resultados</div>
+    <h2>Sem promessa de milagre.<br>Com prazo real.</h2>
+  </div>
+  <div class="tline">
+    <div class="tstep">
+      <div class="when">Semana 1–2</div>
+      <h4>A pele responde primeiro na textura</h4>
+      <p>Mais hidratada, mais macia ao toque. Ainda não é o resultado principal — é o sinal de que o produto está funcionando.</p>
+    </div>
+    <div class="tstep">
+      <div class="when">Semana 2–4</div>
+      <h4>Primeiros sinais de firmeza</h4>
+      <p>É o intervalo onde os primeiros estudos com PDRN tópico mostram diferença mensurável começando a aparecer.</p>
+    </div>
+    <div class="tstep">
+      <div class="when">Uso contínuo</div>
+      <h4>A consistência faz o que a sessão isolada não faz</h4>
+      <p>O mesmo princípio, todos os dias. É assim que o resultado se constrói — e é assim que ele dura.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Antes de decidir</div>
+    <h2>As perguntas que você<br>provavelmente já se fez.</h2>
+  </div>
+  <details class="faq-item">
+    <summary>Por que dois ativos, PDRN e Acetyl Hexapeptide-8, e não só um?</summary>
+    <p>Porque atuam em frentes diferentes e se complementam. O PDRN estimula a produção natural de colágeno da pele. O Acetyl Hexapeptide-8 ajuda a suavizar a aparência de linhas de expressão. Juntos, cobrem firmeza e suavidade na mesma fórmula — sem precisar de uma rotina de vários produtos.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Em quanto tempo vejo resultado?</summary>
+    <p>Os primeiros sinais aparecem na textura, já nas primeiras semanas de uso contínuo. Os estudos com PDRN tópico mostram diferença mensurável a partir de 2-4 semanas de aplicação diária — é um resultado que se constrói, não instantâneo, mas real e documentado.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Posso usar com o resto da minha rotina de skincare?</summary>
+    <p>Sim. Aplique o sérum na pele limpa, antes do hidratante. Ele se combina bem com protetor solar, ácidos e outros ativos — se notar sensibilidade ao introduzir junto de ativos fortes (como retinol), intercale as aplicações.</p>
+  </details>
+  <details class="faq-item">
+    <summary>É seguro para pele madura ou sensível?</summary>
+    <p>PDRN tópico tem perfil de segurança bem documentado. Pode causar leve formigamento nos primeiros 30-60 segundos e sensação de calor por alguns minutos. Vermelhidão leve pode ocorrer nas primeiras aplicações em peles mais reativas. Recomendamos teste de toque antes da primeira aplicação completa.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Isso substitui minha rotina inteira?</summary>
+    <p>Não — e não deveria. O sérum é o passo Treat. Rende mais dentro do ritual completo: Cleanse com o PDRN Cleanser, Treat com o Serum, Glow com o Moisture Stick — três passos, não uma rotina de dez.</p>
+  </details>
+</section>
+
+<!-- DEPOIMENTOS — exemplos pra desenvolvimento de copy, ver nota no fim do bloco -->
+<!-- EXEMPLO — substituir por depoimentos reais assim que coletados. Estrutura-alvo mantida: procedimento nomeado + decepção + tempo de uso + resultado. Ver produto/Big Idea e Mecanismo de Copy — Yumi Skin.md -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Quem já usa</div>
+    <h2>O que estão dizendo.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <p>"Fiz botox duas vezes nos últimos anos. Funciona bem no começo, mas em poucos meses volta tudo igual. Uso o sérum há 2 meses e a diferença é que, dessa vez, não preciso pensar em retorno."</p>
+      <div class="who">Marina, 52 anos</div>
+    </div>
+    <div class="testi-card">
+      <p>"Paguei mais de R$4 mil em 4 sessões de microagulhamento e o resultado nunca justificou o valor. Com o sérum, em 6 semanas minha pele já estava visivelmente mais firme e uniforme — sem sair de casa."</p>
+      <div class="who">Cristina, 58 anos</div>
+    </div>
+    <div class="testi-card">
+      <p>"Fiz preenchimento facial há alguns anos, o efeito durou menos de um ano. Uso o PDRN Serum há 3 meses, na rotina toda — minha pele está com um viço que eu não sentia há tempos."</p>
+      <div class="who">Beatriz, 61 anos</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST TRIAD — reaproveita a copy real do site oficial -->
+<section>
+  <div class="trust-triad">
+    <div class="it"><b>Fórmula registrada</b><p>O PDRN Serum é um cosmético regularizado junto à Anvisa.</p></div>
+    <div class="it"><b>Composição aberta</b><p>A lista completa de ingredientes fica visível na ficha, sem letra miúda.</p></div>
+    <div class="it"><b>Sem promessa exagerada</b><p>Comunicamos apenas o que a fórmula sustenta — nada de resultado garantido.</p></div>
+  </div>
+</section>
+
+<!-- CROSS-SELL — nomes reais dos kits do site oficial -->
+<section>
+  <div class="section-head">
+    <div class="eyebrow center"><span class="dash"></span>Kits</div>
+    <h2>Complete seu ritual.</h2>
+    <p>Combinações pensadas para quem está começando e para quem quer a rotina inteira.</p>
+  </div>
+  <div class="xsell-grid">
+    <div class="xcard">
+      <div class="ph"><span class="ico">🧴💧</span></div>
+      <div class="info">
+        <div class="klabel">Kit 01</div>
+        <h5>Duo Essencial</h5>
+        <div class="desc">A base da rotina: limpar e tratar. Cleanser + Serum.</div>
+        <div class="price">R$ --,--</div>
+      </div>
+    </div>
+    <div class="xcard">
+      <div class="ph"><span class="ico">💧🖊️</span></div>
+      <div class="info">
+        <div class="klabel">Kit 02</div>
+        <h5>Duo Glow</h5>
+        <div class="desc">Tratamento e luminosidade. Serum + Moisture Stick.</div>
+        <div class="price">R$ --,--</div>
+      </div>
+    </div>
+    <div class="xcard">
+      <div class="ph"><span class="ico">🧴💧🖊️</span></div>
+      <div class="info">
+        <div class="klabel">Kit 03</div>
+        <h5>Ritual Completo Yumi</h5>
+        <div class="desc">Os três passos, do primeiro gesto ao brilho final.</div>
+        <div class="price">R$ --,--</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="finner">
+    <div class="fcols">
+      <div class="fcol">
+        <b>Yumi</b>
+        <div>Sobre</div>
+        <div>Nossa linha</div>
+        <div>Contato</div>
+      </div>
+      <div class="fcol">
+        <b>Produtos</b>
+        <div>PDRN Cleanser</div>
+        <div>PDRN Serum</div>
+        <div>PDRN Moisture Stick</div>
+      </div>
+      <div class="fcol">
+        <b>Ajuda</b>
+        <div>FAQ</div>
+        <div>Política de privacidade</div>
+        <div>Termos</div>
+      </div>
+    </div>
+    <div class="brand">yumi skin</div>
+    <div class="compliance">
+      Imagens de produto ilustrativas. Cosméticos não substituem orientação médica.<br><br>
+      PDRN Serum é um cosmético registrado na Anvisa. Não se destina a diagnosticar, tratar, curar ou prevenir doenças. Resultados individuais podem variar.<br><br>
+      © 2026 Yumi Skin Korea
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <div class="inner">
+    <div class="thumb"></div>
+    <div class="info">
+      <div class="n">PDRN Serum · 2un</div>
+      <div class="p">R$ --,--</div>
+    </div>
+    <button class="pill-btn">Quero este produto</button>
+  </div>
+</div>
+
+</body>
+</html>
